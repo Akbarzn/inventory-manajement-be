@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 dotenv.config();
-const PORT = process.env.PORT;
+// const PORT = process.env.PORT;
 const cors = require("cors");
 const adminAuthorization = require("./middleware/adminAuthorization");
 
@@ -24,6 +24,4 @@ app.use("/api/transactions", transactionController);
 app.use("/api/auth", authController);
 app.use("/material", materialController);
 
-app.listen(PORT, () => {
-  console.log("server berjalan" + PORT);
-});
+export default app;
